@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 const Color = require("color");
 
 // https://github.com/tailwindlabs/discuss/issues/392#issuecomment-559305633
@@ -25,7 +26,10 @@ module.exports = {
           DEFAULT: colors.gray["300"],
         },
         "mono-text": {
-          DEFAULT: colors.zinc["800"],
+          DEFAULT: colors.gray["500"],
+        },
+        "mono-rounded": {
+          DEFAULT: defaultTheme.borderRadius["lg"],
         },
       },
     },
