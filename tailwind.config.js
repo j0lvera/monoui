@@ -31,6 +31,10 @@ module.exports = {
         "mono-rounded": {
           DEFAULT: defaultTheme.borderRadius["lg"],
         },
+        "mono-error": {
+          DEFAULT: colors.red[500],
+          hover: colors.red[400],
+        },
       },
     },
   },

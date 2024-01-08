@@ -19,6 +19,7 @@ type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
     numericFormatOptions?: NumericFormatProps;
     symbol?: string;
     currency?: string;
+    helpText?: string;
   };
 
 export { InputProps };

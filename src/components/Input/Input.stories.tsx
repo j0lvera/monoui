@@ -15,7 +15,35 @@ type Story = StoryObj<typeof Input>;
 export const Default: Story = {
   render: () => (
     <Box className={cx(["w-96"])}>
-      <Input label="name" />
+      <Input label="Name" />
+    </Box>
+  ),
+};
+
+export const Money: Story = {
+  render: () => (
+    <Box className={cx(["w-96"])}>
+      <Input label="Balance" money />
+    </Box>
+  ),
+};
+
+export const helpText: Story = {
+  render: () => (
+    <Box className={cx(["w-96"])}>
+      <Input label="Address" helpText="Provide full address and zip code." />
+    </Box>
+  ),
+};
+
+export const WithError: Story = {
+  render: () => (
+    <Box className={cx(["w-96"])}>
+      <Input
+        label="Address"
+        hasError
+        helpText="Provide full address and zip code."
+      />
     </Box>
   ),
 };

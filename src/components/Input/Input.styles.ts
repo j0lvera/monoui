@@ -2,11 +2,13 @@ import { cva } from "class-variance-authority";
 
 const base = [
   "block",
+  "w-full",
   "rounded-lg",
   "border-2",
   "border-mono-border",
   "py-1.5",
   "px-2",
+  "text-left",
   "text-mono-text",
   "text-ellipsis",
   "placeholder:text-mono-border",
@@ -17,13 +19,11 @@ const base = [
 
 const inputStyles = cva(base, {
   variants: {
-    fullWidth: {
-      true: ["w-full"],
+    hasError: {
+      true: "border-mono-error",
     },
   },
-  defaultVariants: {
-    fullWidth: false,
-  },
+  defaultVariants: {},
 });
 
 export { inputStyles };
