@@ -1,0 +1,10 @@
+.storybook
+.idea
+src
+tailwind.config.js
+tsup.config.ts
+tsconfig.json
+jest.config.js
+.buildpacks
+static.json
+storybook-static
