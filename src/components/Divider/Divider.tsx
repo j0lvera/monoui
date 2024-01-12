@@ -1,7 +1,7 @@
 import * as React from "react";
 import { match, P } from "ts-pattern";
 import * as T from "./Divider.types";
-import { Box } from "../Box";
+import { Modal } from "../Box";
 import { cx } from "../../utils";
 import { dividerStyles } from "./Divider.styles";
 
@@ -16,7 +16,7 @@ const Divider = React.forwardRef<
   return match({ border })
     .with({ border: true }, () => (
       <div {...props} className={classes}>
-        <Box className={cx(["bg-mono-border", "h-[2px]"])} />
+        <Modal className={cx(["bg-mono-border", "h-[2px]"])} />
       </div>
     ))
     .otherwise(() => <div {...props} className={classes} ref={forwardedRef} />);

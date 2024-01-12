@@ -7,8 +7,8 @@ import { Header, Title, Description, Body, Footer } from "./components";
 import { cx } from "../../utils";
 
 const Card = React.forwardRef<T.CardElement, T.CardProps>(
-  ({ children, paddless, ...props }, forwardedRef) => {
-    const classes = cx(cardStyles({ paddless }), props.className);
+  ({ children, paddless, borderless = false, ...props }, forwardedRef) => {
+    const classes = cx(cardStyles({ paddless, borderless }), props.className);
 
     return (
       <Primitive.div {...props} className={classes} ref={forwardedRef}>

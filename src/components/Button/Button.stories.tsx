@@ -49,6 +49,20 @@ export const WithIcon: Story = {
   ),
 };
 
+export const OnlyIcon: Story = {
+  render: () => (
+    <Box className={cx(["space-x-2"])}>
+      <Button onlyIcon aria-label="Click me">
+        <FaBeer />
+      </Button>
+
+      <Button intent="primary" onlyIcon aria-label="Click me">
+        <FaApple />
+      </Button>
+    </Box>
+  ),
+};
+
 export const Loading: Story = {
   render: () => (
     <Box className={cx(["space-x-2"])}>

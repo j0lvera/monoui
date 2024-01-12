@@ -5,7 +5,6 @@ const base = [
   "relative isolate inline-flex items-center justify-center gap-x-2 rounded-lg border-2 text-base/6 font-semibold",
 
   // Focus
-  // "focus:outline-none data-[focus]:outline data-[focus]:outline-2 data-[focus]:outline-offset-2 data-[focus]:outline-blue-500",
   "focus:outline-none",
   "data-[focus]:outline",
   "focus-visible:ring-2",
@@ -36,11 +35,14 @@ const primary = [
   "text-white",
 ];
 
+const onlyIcon = ["rounded-full", "p-1"];
+
 const buttonStyles = cva(base, {
   variants: {
     primary: {
       true: primary,
     },
+
     intent: {
       primary,
       DEFAULT,
@@ -51,6 +53,9 @@ const buttonStyles = cva(base, {
     },
     disabled: {
       true: ["data-[disabled]:opacity-50"],
+    },
+    onlyIcon: {
+      true: onlyIcon,
     },
   },
   defaultVariants: {

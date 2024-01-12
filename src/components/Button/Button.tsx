@@ -2,23 +2,23 @@ import React, { forwardRef } from "react";
 import { match, P } from "ts-pattern";
 import { Primitive } from "@radix-ui/react-primitive";
 import { CgSpinner } from "react-icons/cg";
-import { buttonStyles } from "./Button.styles";
+import * as styles from "./Button.styles";
 import type * as T from "./Button.types";
 import { cx } from "../../utils";
 
 const Button = forwardRef<T.ButtonElement, T.ButtonProps>(
   (
-    { size, intent, primary, loading = false, children, ...props },
+    { size, onlyIcon, intent, primary, loading = false, children, ...props },
     forwardedRef
   ) => {
     const classes = cx(
-      buttonStyles({ size, intent, primary }),
+      styles.buttonStyles({ size, intent, primary, onlyIcon }),
       props.className
     );
 
     return (
       <Primitive.button {...props} className={classes} ref={forwardedRef}>
-        {match({ loading })
+        {match({ loading, onlyIcon })
           .with({ loading: true }, () => (
             <>
               <span
@@ -35,6 +35,7 @@ const Button = forwardRef<T.ButtonElement, T.ButtonProps>(
               <span className={cx(["opacity-0"])}>{children}</span>
             </>
           ))
+          // .with({ onlyIcon: true }, () => <span>{children}</span>)
           .otherwise(() => children)}
       </Primitive.button>
     );

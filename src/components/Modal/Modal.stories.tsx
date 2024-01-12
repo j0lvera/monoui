@@ -1,29 +1,29 @@
-import React from "react";
+import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import * as Card from "./Card";
 import { Box } from "../Box";
-import { Input } from "../Input";
 import { Button } from "../Button";
+import * as Card from "../Card";
+import { Modal } from "./Modal";
 import { cx } from "../../utils";
+import { Input } from "../Input";
 
-const meta: Meta<typeof Card.$> = {
-  title: "UI/Card",
-  component: Card.$,
+const meta: Meta<typeof Modal> = {
+  title: "UI/Modal",
+  component: Modal,
 };
 
 export default meta;
-type Story = StoryObj<typeof Card>;
+type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
   render: () => (
-    <Box className={cx(["w-96"])}>
-      <Card.$ paddless>
+    <Modal>
+      <Card.$ paddless borderless>
         <Card.Header>
-          <Card.Title>Create account</Card.Title>
-          <Card.Description>
-            Manage all your transactions in one place.
-          </Card.Description>
+          <Card.Title>Hello, world.</Card.Title>
+          <Card.Description>This is a modal example.</Card.Description>
         </Card.Header>
+
         <Card.Body>
           <form onSubmit={(event) => event.preventDefault()}>
             <Input label="Name" />
@@ -37,23 +37,12 @@ export const Default: Story = {
             <Input label="Balance" money />
           </form>
         </Card.Body>
+
         <Card.Footer className={cx(["flex", "justify-between"])}>
           <Button>Cancel</Button>
           <Button intent="primary">Save</Button>
         </Card.Footer>
       </Card.$>
-    </Box>
-  ),
-};
-
-// Another way to use this component alone is to import the named export
-// import { Card } from './Card';
-export const Paddless: Story = {
-  render: () => (
-    <Box className={cx(["w-96"])}>
-      <Card.$>
-        <p>Dummy content while we create the input components.</p>
-      </Card.$>
-    </Box>
+    </Modal>
   ),
 };
