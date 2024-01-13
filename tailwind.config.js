@@ -28,6 +28,9 @@ module.exports = {
         "mono-text": {
           DEFAULT: colors.gray["500"],
         },
+        "mono-hover": {
+          DEFAULT: colors.gray[400],
+        },
         "mono-rounded": {
           DEFAULT: defaultTheme.borderRadius["lg"],
         },
@@ -38,5 +41,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate")],
 };
