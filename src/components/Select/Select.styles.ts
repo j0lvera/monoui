@@ -19,8 +19,8 @@ const content = [
   "relative",
   "max-h-96",
   "min-w-[8rem]",
-  "py-1.5",
-  "px-2",
+  // "py-1.5",
+  // "px-2",
   "border-2",
   "border-mono-border",
   "overflow-hidden",
@@ -50,13 +50,24 @@ const scroll = [
 
 const indicator = [
   "absolute",
-  "left-0",
+  "top-1/2",
+  "-translate-y-1/2",
+  "right-2",
   "inline-flex",
   "items-center",
   "justify-center",
 ];
 
-const selectStyles = cva(base);
+const selectStyles = cva(base, {
+  variants: {
+    fullWidth: {
+      true: "w-full",
+    },
+  },
+  defaultVariants: {
+    fullWidth: false,
+  },
+});
 
 const item = [
   "relative",
@@ -65,12 +76,15 @@ const item = [
   "cursor-default",
   "select-none",
   "items-center",
-  "py-1.5",
-  "pr-2",
-  "pl-8",
+  "py-0.5",
+  "px-2",
+  "rounded-sm",
   "data-[disabled]:pointer-events-none",
   "data-[disabled]:text-mono-text/50",
-  "focus:outline-none",
+  "outline-none",
+  "focus:rounded-md",
+  "focus:bg-mono-primary",
+  "focus:text-white",
   "focus:border-mono-primary",
 ];
 

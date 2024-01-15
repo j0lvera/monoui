@@ -3,6 +3,7 @@ import dashify from "dashify";
 import { NumericFormat } from "react-number-format";
 import type * as T from "./Input.types";
 import { Box } from "../Box";
+import { Label } from "../Label";
 import { cx } from "../../utils";
 import { inputStyles } from "./Input.styles";
 import { match, P } from "ts-pattern";
@@ -42,17 +43,14 @@ const Input = React.forwardRef<HTMLInputElement, T.InputProps>(
 
     return (
       <Box className={cx(["relative"])}>
-        <label
-          className={cx(
-            ["text-sm", "font-semibold", "leading-6", "text-mono-primary"],
-            {
-              "sr-only": hideLabel,
-            }
-          )}
+        <Label
+          className={cx({
+            "sr-only": hideLabel,
+          })}
           htmlFor={htmlId}
         >
           {label}
-        </label>
+        </Label>
         <Box
           className={cx(["relative"], {
             "mt-1": !hideLabel,

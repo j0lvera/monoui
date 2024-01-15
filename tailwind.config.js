@@ -29,7 +29,7 @@ module.exports = {
           DEFAULT: colors.gray["500"],
         },
         "mono-hover": {
-          DEFAULT: colors.gray[400],
+          DEFAULT: colors.gray[200],
         },
         "mono-rounded": {
           DEFAULT: defaultTheme.borderRadius["lg"],

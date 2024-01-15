@@ -16,7 +16,9 @@ type SelectSection = {
 type SelectElement = React.ElementRef<typeof $.Trigger>;
 
 type SelectProps = React.ComponentPropsWithoutRef<typeof $.Trigger> &
-  VariantProps<typeof selectStyles> & {};
+  VariantProps<typeof selectStyles> & {
+    hideLabel?: boolean;
+  };
 
 type SelectItemElement = React.ElementRef<typeof $.Item>;
 
