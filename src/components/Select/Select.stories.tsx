@@ -18,7 +18,42 @@ const options = [
 
 export const Default: Story = {
   render: () => (
-    <Select placeholder="Select a fruit" tabIndex={0}>
+    <Select label="Fruits" placeholder="Select a fruit" tabIndex={0}>
+      {options.map((option) => (
+        <SelectItem key={option.value} value={option.value}>
+          {option.label}
+        </SelectItem>
+      ))}
+    </Select>
+  ),
+};
+
+export const HelpText: Story = {
+  render: () => (
+    <Select
+      label="Fruits"
+      placeholder="Select a fruit"
+      tabIndex={0}
+      helpText="Select from an approved list of fruits."
+    >
+      {options.map((option) => (
+        <SelectItem key={option.value} value={option.value}>
+          {option.label}
+        </SelectItem>
+      ))}
+    </Select>
+  ),
+};
+
+export const WithError: Story = {
+  render: () => (
+    <Select
+      label="Fruits"
+      placeholder="Select a fruit"
+      tabIndex={0}
+      hasError
+      helpText="You must select one fruit."
+    >
       {options.map((option) => (
         <SelectItem key={option.value} value={option.value}>
           {option.label}

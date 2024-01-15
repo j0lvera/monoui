@@ -4,6 +4,7 @@ import { NumericFormat } from "react-number-format";
 import type * as T from "./Input.types";
 import { Box } from "../Box";
 import { Label } from "../Label";
+import { HelpText } from "../HelpText";
 import { cx } from "../../utils";
 import { inputStyles } from "./Input.styles";
 import { match, P } from "ts-pattern";
@@ -93,13 +94,7 @@ const Input = React.forwardRef<HTMLInputElement, T.InputProps>(
         </Box>
         {match(helpText)
           .with(P.not(P.nullish), () => (
-            <p
-              className={cx(["mt-2", "text-sm", "text-mono-text"], {
-                "text-mono-error": hasError,
-              })}
-            >
-              {helpText}
-            </p>
+            <HelpText hasError={hasError}>{helpText}</HelpText>
           ))
           .otherwise(() => null)}
       </Box>

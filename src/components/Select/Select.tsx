@@ -1,15 +1,32 @@
 import * as React from "react";
 import * as $ from "@radix-ui/react-select";
+import { match, P } from "ts-pattern";
 import { FaCheck, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import * as T from "./Select.types";
 import * as styles from "./Select.styles";
 import { cx } from "../../utils";
 import { Box } from "../Box";
 import { Label } from "../Label";
+import { HelpText } from "../HelpText";
 
 const Select = React.forwardRef<T.SelectElement, T.SelectProps>(
-  ({ hideLabel = false, fullWidth, children, className, ...props }, ref) => {
-    const classes = cx([styles.selectStyles({ fullWidth })], className);
+  (
+    {
+      label,
+      hideLabel = false,
+      helpText,
+      fullWidth,
+      hasError,
+      children,
+      className,
+      ...props
+    },
+    ref
+  ) => {
+    const classes = cx(
+      [styles.selectStyles({ fullWidth, hasError })],
+      className
+    );
     return (
       <Box className={cx(["relative"])}>
         <Label
@@ -18,7 +35,7 @@ const Select = React.forwardRef<T.SelectElement, T.SelectProps>(
             "sr-only": hideLabel,
           })}
         >
-          Select
+          {label}
         </Label>
         <Box className={cx(["mt-1"])}>
           <$.Root>
@@ -46,6 +63,11 @@ const Select = React.forwardRef<T.SelectElement, T.SelectProps>(
             </$.Portal>
           </$.Root>
         </Box>
+        {match(helpText)
+          .with(P.not(P.nullish), (helpText) => (
+            <HelpText hasError={hasError}>{helpText}</HelpText>
+          ))
+          .otherwise(() => null)}
       </Box>
     );
   }

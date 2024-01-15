@@ -63,6 +63,9 @@ const selectStyles = cva(base, {
     fullWidth: {
       true: "w-full",
     },
+    hasError: {
+      true: "border-mono-error",
+    },
   },
   defaultVariants: {
     fullWidth: false,
