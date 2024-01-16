@@ -16,7 +16,7 @@ const Divider = React.forwardRef<
   return match({ border })
     .with({ border: true }, () => (
       <div {...props} className={classes}>
-        <Box className={cx(["bg-mono-border", "h-[2px]"])} />
+        <Box className={cx(["bg-mono-border", "h-[1.5px]"])} />
       </div>
     ))
     .otherwise(() => <div {...props} className={classes} ref={forwardedRef} />);

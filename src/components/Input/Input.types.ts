@@ -1,15 +1,13 @@
-import * as React from "react";
-import { Primitive } from "@radix-ui/react-primitive";
-import { VariantProps } from "class-variance-authority";
-import { inputStyles } from "./Input.styles";
-import { NumericFormatProps } from "react-number-format";
 import { InputHTMLAttributes } from "react";
+import { NumericFormatProps } from "react-number-format";
+import { VariantProps } from "class-variance-authority";
+import * as Common from "../Common";
+import { inputStyles } from "./Input.styles";
 
 type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
-  VariantProps<typeof inputStyles> & {
-    label: string;
+  VariantProps<typeof inputStyles> &
+  Common.T.InputProps & {
     money?: boolean;
-    hideLabel?: boolean;
     type?: NumericFormatProps["type"];
     value?: HTMLInputElement["value"] | NumericFormatProps["value"];
     defaultValue?:
@@ -19,7 +17,6 @@ type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
     numericFormatOptions?: NumericFormatProps;
     symbol?: string;
     currency?: string;
-    helpText?: string;
   };
 
 export { InputProps };

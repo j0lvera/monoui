@@ -3,8 +3,7 @@ import dashify from "dashify";
 import { NumericFormat } from "react-number-format";
 import type * as T from "./Input.types";
 import { Box } from "../Box";
-import { Label } from "../Label";
-import { HelpText } from "../HelpText";
+import { Label, HelpText } from "../Common";
 import { cx } from "../../utils";
 import { inputStyles } from "./Input.styles";
 import { match, P } from "ts-pattern";
@@ -19,7 +18,7 @@ const Input = React.forwardRef<HTMLInputElement, T.InputProps>(
       hideLabel = false,
       symbol = "$",
       currency = "USD",
-      hasError,
+      hasError = false,
       ...props
     },
     forwardedRef
@@ -93,7 +92,7 @@ const Input = React.forwardRef<HTMLInputElement, T.InputProps>(
             ))}
         </Box>
         {match(helpText)
-          .with(P.not(P.nullish), () => (
+          .with(P.not(P.nullish), (helpText) => (
             <HelpText hasError={hasError}>{helpText}</HelpText>
           ))
           .otherwise(() => null)}

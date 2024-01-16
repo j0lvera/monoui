@@ -6,8 +6,7 @@ import * as T from "./Select.types";
 import * as styles from "./Select.styles";
 import { cx } from "../../utils";
 import { Box } from "../Box";
-import { Label } from "../Label";
-import { HelpText } from "../HelpText";
+import { Label, HelpText } from "../Common";
 
 const Select = React.forwardRef<T.SelectElement, T.SelectProps>(
   (

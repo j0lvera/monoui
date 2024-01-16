@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Primitive } from "@radix-ui/react-primitive";
 import { cva, VariantProps } from "class-variance-authority";
-import { cx } from "../utils";
-import * as Common from "./Common";
+import { cx } from "../../utils";
+import * as Common from "./index";
 
 type HelpTextElement = React.ElementRef<typeof Primitive.p>;
 

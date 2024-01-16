@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as $ from "@radix-ui/react-label";
 import { cva } from "class-variance-authority";
-import { cx } from "../utils";
+import { cx } from "../../utils";
 
 type LabelElement = React.ElementRef<typeof $.Root>;
 
