@@ -2,6 +2,7 @@ module.exports = {
   stories: [
     "../src/components/**/*.stories.mdx",
     "../src/components/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/examples/**/*.stories.@(js|jsx|ts|tsx)",
     // "../src/examples/**/*.stories.mdx",
     // "../src/examples/**/*.stories.@(js|jsx|ts|tsx)",
   ],
@@ -19,6 +20,6 @@ module.exports = {
 
   framework: {
     name: "@storybook/react-webpack5",
-    options: {}
-  }
+    options: {},
+  },
 };

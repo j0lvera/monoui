@@ -4,13 +4,13 @@ import { Box } from "../Box";
 import { Combobox } from "./Combobox";
 import { cx } from "../../utils";
 
-const meta: Meta<typeof Box> = {
+const meta: Meta<typeof Combobox> = {
   title: "UI/Combobox",
-  component: Box,
+  component: Combobox,
 };
 
 export default meta;
-type Story = StoryObj<typeof Box>;
+type Story = StoryObj<typeof Combobox>;
 
 const animals = [
   { label: "Cat", value: "cat" },
@@ -37,4 +37,36 @@ const animals = [
 
 export const Default: Story = {
   render: () => <Combobox label="Animals" options={animals} />,
+};
+
+export const WithHelpText: Story = {
+  render: () => (
+    <Combobox
+      label="Animals"
+      options={animals}
+      helpText="Please select an option."
+    />
+  ),
+};
+
+export const Loading: Story = {
+  render: () => (
+    <Combobox
+      label="Animals"
+      options={animals}
+      helpText="Please select an option."
+      isLoading
+    />
+  ),
+};
+
+export const WithError: Story = {
+  render: () => (
+    <Combobox
+      label="Animals"
+      options={animals}
+      hasError
+      helpText="Please select an option."
+    />
+  ),
 };

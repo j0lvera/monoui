@@ -1,20 +1,20 @@
 import { cva } from "class-variance-authority";
 
-const base = [""];
+const base = ["block"];
 
-const horizontal = ["px-0", "w-full"];
-const vertical = ["py-0", "h-full"];
+const horizontal = [""];
+const vertical = [""];
 
 const dividerStyles = cva(base, {
   variants: {
     size: {
       sm: ["p-1"],
       md: ["p-2"],
-      lg: ["p-4"],
-      xl: ["p-6"],
+      lg: ["p-3"],
+      xl: ["p-4"],
     },
     border: {
-      true: [],
+      true: [""],
     },
     orientation: {
       horizontal,
@@ -27,4 +27,4 @@ const dividerStyles = cva(base, {
   },
 });
 
-export { dividerStyles };
+export { dividerStyles, horizontal, vertical };

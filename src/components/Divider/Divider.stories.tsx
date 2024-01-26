@@ -26,9 +26,19 @@ export const Default: Story = {
 export const WithBorder: Story = {
   render: () => (
     <Box>
-      Hello world
-      <Divider border />
-      Hello world
+      <Box>
+        Hello world
+        <Divider border />
+        Hello world
+      </Box>
+
+      <Divider />
+
+      <Box className={cx(["flex"])}>
+        Hello world
+        <Divider border orientation="vertical" size="xl" />
+        Hello world
+      </Box>
     </Box>
   ),
 };

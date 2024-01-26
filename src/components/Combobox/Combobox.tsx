@@ -1,6 +1,7 @@
 import * as _ from "lodash-es";
 import * as React from "react";
 import * as Popover from "@radix-ui/react-popover";
+import { match, P } from "ts-pattern";
 import {
   Command,
   CommandEmpty,
@@ -9,35 +10,54 @@ import {
   CommandItem,
   CommandList,
 } from "cmdk";
-import * as T from "./Combobox.types";
+import type * as T from "./Combobox.types";
 import * as styles from "./Combobox.styles";
 import { Divider } from "../Divider";
-import { Label } from "../Common";
+import { HelpText, Label } from "../Common";
 import { Button } from "../Button";
 import { Box } from "../Box";
-import { Input } from "../Input";
 import { cx } from "../../utils";
 import { FaCheck, FaChevronDown, FaSistrix } from "react-icons/fa";
+import { CgSpinner } from "react-icons/cg";
 
 const Combobox = React.forwardRef<T.ComboboxElement, T.ComboboxProps>(
-  ({ label, hideLabel, options, onSelect, defaultValue }, forwardedRef) => {
+  (
+    {
+      isLoading = false,
+      label,
+      hideLabel,
+      helpText,
+      options,
+      onSelect,
+      onUnselect,
+      hasError,
+      defaultValue,
+      ...props
+    },
+    forwardedRef
+  ) => {
     const [open, setOpen] = React.useState(false);
     const [selected, setSelected] = React.useState(defaultValue);
 
-    const handleOnSelect = (selectedValue: string) => {
-      console.log("selected value", selectedValue);
+    const classes = cx(styles.comboboxStyles({ hasError }), props.className);
 
+    const handleOnSelect = (selectedValue: string) => {
       const option = options.find((option) => option.value === selectedValue);
-      console.log("selected option", option);
 
       if (!_.isNil(option)) {
         // If same option then unselect it.
         if (option?.label === selected) {
           // Unselect logic
+          setSelected(undefined);
+          onUnselect?.(option);
         } else {
           // Select logic
+          setSelected(option.label);
+          onSelect?.(option);
         }
       }
+
+      setOpen(false);
     };
 
     return (
@@ -46,26 +66,37 @@ const Combobox = React.forwardRef<T.ComboboxElement, T.ComboboxProps>(
           <Label className={cx([], { "sr-only": hideLabel })}>{label}</Label>
         </Box>
         <Popover.Trigger asChild>
-          <Button role="combobox" className={cx([""], { "mt-2": !hideLabel })}>
-            {label}
-            <FaChevronDown />
+          <Button
+            role="combobox"
+            className={cx(classes, ["font-normal"], { "mt-2": !hideLabel })}
+          >
+            {match([selected, props.placeholder])
+              // Use selected value if available
+              .with([P.not(P.nullish), P._], () => <span>{selected}</span>)
+              // Use placeholder if value is not available and placeholder is
+              .with([P.nullish, P.not(P.nullish)], () => (
+                <span>{props.placeholder}</span>
+              ))
+              // Use default placeholder if value and placeholder are not available
+              .with(P.array(P.nullish), () => <span>Select option...</span>)
+              .exhaustive()}
+            {isLoading ? (
+              <CgSpinner
+                className={cx(["motion-safe:animate-spin", "ml-auto"])}
+              />
+            ) : (
+              <FaChevronDown />
+            )}
           </Button>
         </Popover.Trigger>
         <Popover.Portal>
-          <Popover.Content sideOffset={4} align="start">
-            <Command
-              className={cx([
-                "bg-white",
-                "flex",
-                "h-full",
-                "w-full",
-                "flex-col",
-                "overflow-hidden",
-                "rounded-lg",
-                "border-2",
-                "border-mono-border",
-              ])}
-            >
+          <Popover.Content
+            sideOffset={4}
+            align="start"
+            {...props}
+            ref={forwardedRef}
+          >
+            <Command className={cx([styles.command])}>
               <Box
                 className={cx(["flex", "items-center", "px-2"])}
                 cmdk-input-wrapper=""
@@ -80,22 +111,8 @@ const Combobox = React.forwardRef<T.ComboboxElement, T.ComboboxProps>(
                   ])}
                 />
                 <CommandInput
-                  // className={cx([styles.comboboxStyles()])}
                   placeholder="Search Option..."
-                  ref={forwardedRef}
-                  className={cx([
-                    "flex",
-                    "w-full",
-                    "rounded-md",
-                    "bg-transparent",
-                    "outline-none",
-                    "border-0",
-                    "placeholder:text-muted-foreground",
-                    "focus:outline-none",
-                    "focus:ring-0",
-                    "disabled:cursor-not-allowed",
-                    "disabled:opacity-50",
-                  ])}
+                  className={cx([styles.input])}
                 />
               </Box>
               <Divider border size="sm" className={cx(["py-0"])} />
@@ -114,9 +131,15 @@ const Combobox = React.forwardRef<T.ComboboxElement, T.ComboboxProps>(
                         {nestedOptions.map((nestedOption, nestedIndex) => (
                           <CommandItem
                             key={String(nestedOption.value)}
+                            className={cx([styles.item])}
                             onSelect={handleOnSelect}
                           >
                             {nestedOption.label}
+                            <FaCheck
+                              className={cx([styles.checkedIcon], {
+                                "opacity-100": selected === option.label,
+                              })}
+                            />
                           </CommandItem>
                         ))}
                       </CommandGroup>
@@ -125,25 +148,16 @@ const Combobox = React.forwardRef<T.ComboboxElement, T.ComboboxProps>(
                   return (
                     <CommandGroup>
                       <CommandItem
-                        className={cx([
-                          "relative",
-                          "flex",
-                          "cursor-default",
-                          "select-none",
-                          "items-center",
-                          "px-2",
-                          "py-1",
-                          "outline-none",
-                          "rounded-sm",
-                          "aria-selected:bg-mono-primary",
-                          "aria-selected:text-white",
-                          "data-[disabled]:pointer-events-none",
-                          "data-[disabled]:opacity-50",
-                        ])}
                         key={option.value}
+                        className={cx([styles.item])}
                         onSelect={handleOnSelect}
                       >
                         {option.label}
+                        <FaCheck
+                          className={cx([styles.checkedIcon], {
+                            "opacity-100": selected === option.label,
+                          })}
+                        />
                       </CommandItem>
                     </CommandGroup>
                   );
@@ -152,6 +166,11 @@ const Combobox = React.forwardRef<T.ComboboxElement, T.ComboboxProps>(
             </Command>
           </Popover.Content>
         </Popover.Portal>
+        {match(helpText)
+          .with(P.not(P.nullish), (helpText) => (
+            <HelpText hasError={hasError}>{helpText}</HelpText>
+          ))
+          .otherwise(() => null)}
       </Popover.Root>
     );
   }

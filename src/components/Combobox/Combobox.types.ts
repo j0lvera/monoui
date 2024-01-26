@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Input } from "../Input";
 import { InputProps } from "../Common/Common.types";
 
 type ComboboxOption = {
@@ -7,26 +6,18 @@ type ComboboxOption = {
   value: string | ComboboxOption[];
 };
 
-type ComboboxElement = React.ElementRef<typeof Input>;
+type ComboboxElement = React.ElementRef<"div">;
 
-type ComboboxProps = React.ComponentPropsWithoutRef<typeof Input> &
+type ComboboxProps = React.ComponentPropsWithoutRef<"div"> &
   InputProps & {
+    isLoading?: boolean;
     options: ComboboxOption[];
-    fullWidth?: boolean;
     allowCreate?: boolean;
     onSelect?: (option: ComboboxOption) => void;
+    onUnselect?: (option: ComboboxOption) => void;
     onCreate?: (option: ComboboxOption) => void;
     // Updates the selected option when optimistic updates happen.
     onSync?: (option: ComboboxOption) => void;
   };
 
-// type ComboboxItemElement = React.ElementRef<typeof ListBoxItem>;
-//
-// type ComboboxItemProps = React.ComponentPropsWithoutRef<typeof ListBoxItem>;
-
-export {
-  ComboboxElement,
-  ComboboxProps,
-  // ComboboxItemElement,
-  // ComboboxItemProps,
-};
+export type { ComboboxElement, ComboboxProps, ComboboxOption };

@@ -35,6 +35,10 @@ const primary = [
   "text-white",
 ];
 
+const secondary = ["bg-mono-hover", "hover:bg-transparent"];
+
+const plain = ["bg-transparent", "border-transparent", "hover:bg-gray-100"];
+
 const onlyIcon = ["rounded-full", "p-1"];
 
 const buttonStyles = cva(base, {
@@ -45,7 +49,9 @@ const buttonStyles = cva(base, {
 
     intent: {
       primary,
+      secondary,
       DEFAULT,
+      plain,
     },
     size,
     fullWidth: {

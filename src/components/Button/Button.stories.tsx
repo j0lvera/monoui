@@ -23,6 +23,14 @@ export const Primary: Story = {
   render: () => <Button intent="primary">Click me</Button>,
 };
 
+export const Secondary: Story = {
+  render: () => <Button intent="secondary">Click me</Button>,
+};
+
+export const Plain: Story = {
+  render: () => <Button intent="plain">Click me</Button>,
+};
+
 export const Sizes: Story = {
   render: () => (
     <Box className={cx(["space-x-2"])}>

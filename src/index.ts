@@ -5,4 +5,5 @@ export { Divider } from "./components/Divider";
 export { Input } from "./components/Input";
 export { Modal } from "./components/Modal";
 export { Select } from "./components/Select";
+export { Dropdown } from "./components/Dropdown";
 export { cx } from "./utils";
