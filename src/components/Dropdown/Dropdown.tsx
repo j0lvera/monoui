@@ -15,10 +15,10 @@ const Dropdown = React.forwardRef<T.DropdownElement, T.DropdownProps>(
           className={cx([styles.content, props.className])}
           ref={forwardedRef}
         >
-          {options?.map(({ label, value, icon: Icon, href, onSelect }) => (
+          {options?.map(({ label, value, icon: Icon, onSelect }) => (
             <$.Item
               className={cx([styles.item])}
-              onSelect={() => onSelect?.(href ?? value)}
+              onSelect={() => onSelect?.(value)}
             >
               {Icon && <Icon className={cx(["mr-2"])} />}
               {label}
