@@ -1,5 +1,5 @@
 {
-  "name": "monoui",
+  "name": "@juan.bz/monoui",
   "version": "0.1.3",
   "description": "Mono UI",
   "main": "dist/index.cjs.js",
@@ -100,6 +100,9 @@
   },
   "np": {
     "yarn": false
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "resolutions": {
     "@storybook/{app}/webpack": "^5"
