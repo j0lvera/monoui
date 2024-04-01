@@ -1,3 +1,1 @@
-import * as Card from "./Card";
-
-export { Card }
+export * from "./Card";

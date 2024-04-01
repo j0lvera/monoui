@@ -1,10 +1,8 @@
 import * as React from "react";
-import { Box } from "../../components/Box";
-import { cx } from "../../utils";
-import { Header } from "./Header";
+import { Box, cx } from '../../index';
+
 import { Sidebar } from "./Sidebar";
 import { Content } from "./Content";
-import { Flyout } from "../../components/Flyout";
 
 const Dashboard = () => {
   return (

@@ -23,17 +23,9 @@ const animals = [
   { label: "Lion", value: "lion" },
   { label: "Monkey", value: "monkey" },
   { label: "Panda", value: "panda" },
+  { label: "Car", value: "car" },
+  { label: "Car Payment", value: "car_payment" },
 ];
-
-// export const Default: Story = {
-//   render: () => (
-//     <Combobox label="Animals" items={animals}>
-//       {animals.map((animal) => (
-//         <ComboboxItem key={animal.value}>{animal.label}</ComboboxItem>
-//       ))}
-//     </Combobox>
-//   ),
-// };
 
 export const Default: Story = {
   render: () => <Combobox label="Animals" options={animals} />,

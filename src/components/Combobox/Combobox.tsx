@@ -42,7 +42,9 @@ const Combobox = React.forwardRef<T.ComboboxElement, T.ComboboxProps>(
     const classes = cx(styles.comboboxStyles({ hasError }), props.className);
 
     const handleOnSelect = (selectedValue: string) => {
-      const option = options.find((option) => option.value === selectedValue);
+      const option = options.find(
+        (option) => option.label.toLowerCase() === selectedValue
+      );
 
       if (!_.isNil(option)) {
         // If same option then unselect it.
