@@ -1,13 +1,10 @@
 {
-  "name": "@j0lv3r4/monoui",
+  "name": "monoui",
   "version": "0.1.3",
   "description": "Mono UI",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "engines": {
     "npm": ">=9.6.7",
     "node": ">=18.17.1"
@@ -26,19 +23,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:j0lv3r4/monoui.git"
+    "url": "git+ssh://git@git.uwu.ms:2221/jolvera/monoui.git"
   },
   "keywords": [
     "React",
     "UI",
     "Components"
   ],
-  "author": "Juan Olvera",
+  "author": "juan.bz",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/j0lv3r4/monoui/issues"
-  },
-  "homepage": "https://github.com/j0lv3r4/monoui#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.23.7",
     "@storybook/addon-actions": "^7.6.7",
