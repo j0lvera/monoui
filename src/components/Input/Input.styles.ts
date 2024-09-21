@@ -26,4 +26,4 @@ const inputStyles = cva(base, {
   defaultVariants: {},
 });
 
-export { inputStyles };
+export { inputStyles, base };

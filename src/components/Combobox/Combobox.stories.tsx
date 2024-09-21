@@ -28,7 +28,7 @@ const animals = [
 ];
 
 export const Default: Story = {
-  render: () => <Combobox label="Animals" options={animals} />,
+  render: () => <Combobox />,
 };
 
 export const WithHelpText: Story = {
