@@ -12,6 +12,9 @@ const base = [
   "rounded-lg",
   "focus:outline-none",
   "focus:border-mono-primary",
+  "text-ellipsis",
+  "overflow-hidden",
+  "whitespace-nowrap",
 ];
 
 const viewport = ["p-1"];

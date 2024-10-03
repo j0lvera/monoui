@@ -8,11 +8,20 @@ import { cx } from "../../utils";
 
 const Button = forwardRef<T.ButtonElement, T.ButtonProps>(
   (
-    { size, onlyIcon, intent, primary, loading = false, children, ...props },
+    {
+      size,
+      onlyIcon,
+      fullWidth,
+      intent,
+      primary,
+      loading = false,
+      children,
+      ...props
+    },
     forwardedRef
   ) => {
     const classes = cx(
-      styles.buttonStyles({ size, intent, primary, onlyIcon }),
+      styles.buttonStyles({ size, intent, primary, onlyIcon, fullWidth }),
       props.className
     );
 

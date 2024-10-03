@@ -12,6 +12,7 @@ const dividerStyles = cva(base, {
       md: ["p-2"],
       lg: ["p-3"],
       xl: ["p-4"],
+      "2xl": ["p-8"],
     },
     border: {
       true: [""],

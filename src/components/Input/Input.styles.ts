@@ -22,7 +22,11 @@ const inputStyles = cva(base, {
     hasError: {
       true: "border-mono-error",
     },
+    fullWidth: {
+      true: ["w-full"],
+    },
   },
+
   defaultVariants: {},
 });
 

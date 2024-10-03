@@ -7,6 +7,7 @@ import * as styles from "./Select.styles";
 import { cx } from "../../utils";
 import { Box } from "../Box";
 import { Label, HelpText } from "../Common";
+import { useState } from "react";
 
 const Select = React.forwardRef<T.SelectElement, T.SelectProps>(
   (
@@ -22,6 +23,7 @@ const Select = React.forwardRef<T.SelectElement, T.SelectProps>(
     },
     ref
   ) => {
+    const [value, setValue] = useState("");
     const classes = cx(
       [styles.selectStyles({ fullWidth, hasError })],
       className
@@ -37,9 +39,18 @@ const Select = React.forwardRef<T.SelectElement, T.SelectProps>(
           {label}
         </Label>
         <Box className={cx(["mt-1"])}>
-          <$.Root>
+          <$.Root value={value} onValueChange={setValue}>
             <$.Trigger id="select" {...props} className={classes} ref={ref}>
-              <$.Value placeholder={props.placeholder} />
+              <span
+                className={cx([
+                  "text-ellipsis",
+                  "overflow-hidden",
+                  "whitespace-nowrap",
+                  "pointer-events-none",
+                ])}
+              >
+                {value || props.placeholder}
+              </span>
               <$.Icon className={cx(["ml-2"])} asChild>
                 <FaChevronDown />
               </$.Icon>

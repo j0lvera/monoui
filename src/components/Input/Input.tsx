@@ -19,13 +19,14 @@ const Input = React.forwardRef<HTMLInputElement, T.InputProps>(
       symbol = "$",
       currency = "USD",
       hasError = false,
+      fullWidth = false,
       ...props
     },
     forwardedRef
   ) => {
     const htmlId = dashify(label);
     const classes = cx(
-      inputStyles({ hasError }),
+      inputStyles({ hasError, fullWidth }),
       {
         "pr-12": currency,
         "text-right": money,
