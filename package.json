@@ -1,10 +1,15 @@
 {
-  "name": "@juan.bz/monoui",
+  "name": "monoui",
   "version": "0.1.6",
-  "description": "Mono UI",
+  "description": "monochromatic-ish UI library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "engines": {
     "npm": ">=9.6.7",
     "node": ">=18.17.1"
