@@ -34,7 +34,10 @@ export const Default: Story = {
 
             <Box className={cx(["py-2"])} />
 
-            <Input label="Balance" money />
+            <Input
+              label="Balance"
+              // money
+            />
           </form>
         </Card.Body>
 

@@ -2,7 +2,10 @@ type InputProps = {
   label: string;
   hideLabel?: boolean;
   helpText?: string;
-  hasError?: boolean;
 };
 
-export type { InputProps };
+type CommonProps = {
+  fullWidth?: boolean;
+};
+
+export type { InputProps, CommonProps };

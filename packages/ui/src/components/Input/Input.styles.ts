@@ -31,3 +31,10 @@ const inputStyles = cva(base, {
 });
 
 export { inputStyles };
+
+// type InputProps = {
+//   label: string;
+//   hideLabel?: boolean;
+//   helpText?: string;
+//   hasError?: boolean;
+// };
