@@ -4,4 +4,5 @@ node_modules
 .yalc
 yalc.lock
 storybook-static
-src/catalyst
+packages/ui/src/catalyst
+.turbo
