@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { MoneyInput } from "./Money";
+import { MoneyInput } from "./MoneyInput";
 
 const meta: Meta<typeof MoneyInput> = {
+  title: "UI/MoneyInput",
   component: MoneyInput,
 };
 

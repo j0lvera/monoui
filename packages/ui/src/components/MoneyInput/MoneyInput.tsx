@@ -5,8 +5,8 @@ import { NumericFormat } from "react-number-format";
 import * as Input from "../Input";
 import { Box } from "../Box";
 import { cx } from "../../utils";
-import { InputComponent, InputProps } from "./Money.types";
-import { decorationStyles } from "./Money.styles";
+import { InputComponent, InputProps } from "./MoneyInput.types";
+import { decorationStyles } from "./MoneyInput.styles";
 import { HelpText } from "../Common";
 import { InputWrapper } from "../Common/InputWrapper";
 
