@@ -18,7 +18,9 @@ type SelectElement = React.ElementRef<typeof $.Trigger>;
 
 type SelectProps = React.ComponentPropsWithoutRef<typeof $.Trigger> &
   VariantProps<typeof selectStyles> &
-  Common.T.InputProps & {};
+  Common.T.InputProps & {
+    placeholder?: string;
+  };
 
 type SelectItemElement = React.ElementRef<typeof $.Item>;
 

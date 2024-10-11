@@ -6,7 +6,6 @@ import { Input } from "../../components/Input";
 import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
 import { Select, SelectItem } from "../../components/Select";
-import { Label } from "../../components/Common";
 import { Divider } from "../../components/Divider";
 import { FaTrash } from "react-icons/fa6";
 
@@ -66,7 +65,11 @@ const Transaction = () => {
               </Tabs.List>
               <Tabs.Content value="single" fullWidth>
                 <Divider />
-                <Input label="Amount" money fullWidth />
+                <Input
+                  label="Amount"
+                  // money
+                  fullWidth
+                />
                 <Divider />
                 <Select
                   label="Category"
@@ -147,7 +150,11 @@ const Transaction = () => {
 
                 <Box className={cx(["flex", "flex-row"])}>
                   <Box className={cx(["w-1/2"])}>
-                    <Input label="Amount" money fullWidth />
+                    <Input
+                      label="Amount"
+                      // money
+                      fullWidth
+                    />
                   </Box>
                   <Divider />
                   <Box className={cx(["w-1/2"])}>

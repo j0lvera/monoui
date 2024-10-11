@@ -2,13 +2,11 @@ import * as React from "react";
 import { Primitive } from "@radix-ui/react-primitive";
 import { cva, VariantProps } from "class-variance-authority";
 import { cx } from "../../utils";
-import * as Common from "./index";
 
 type HelpTextElement = React.ElementRef<typeof Primitive.p>;
 
 type HelpTextProps = React.ComponentPropsWithoutRef<typeof Primitive.p> &
-  VariantProps<typeof styles> &
-  Pick<Common.T.InputProps, "hasError"> & {};
+  VariantProps<typeof styles> & {};
 
 const styles = cva(["mt-2", "text-sm", "text-mono-text"], {
   variants: {
@@ -29,7 +27,7 @@ const HelpText = React.forwardRef<HelpTextElement, HelpTextProps>(
         {children}
       </p>
     );
-  }
+  },
 );
 
 export { HelpText };

@@ -3,21 +3,21 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Box } from "../Box";
 import { Button } from "../Button";
 import * as Card from "../Card";
-import { Modal } from "./Modal";
+import { Flyout } from "./Flyout";
 import { cx } from "../../utils";
 import { Input } from "../Input";
 
-const meta: Meta<typeof Modal> = {
-  title: "UI/Modal",
-  component: Modal,
+const meta: Meta<typeof Flyout> = {
+  title: "UI/Flyout",
+  component: Flyout,
 };
 
 export default meta;
-type Story = StoryObj<typeof Modal>;
+type Story = StoryObj<typeof Flyout>;
 
 export const Default: Story = {
   render: () => (
-    <Modal>
+    <Flyout>
       <Card.$ paddless borderless>
         <Card.Header>
           <Card.Title>Hello, world.</Card.Title>
@@ -34,15 +34,18 @@ export const Default: Story = {
 
             <Box className={cx(["py-2"])} />
 
-            <Input label="Balance" money />
+            <Input
+              label="Balance"
+              // money
+            />
           </form>
         </Card.Body>
 
-        <Card.Footer className={cx(["flex", "justify-between"])}>
+        <Card.Footer className={cx(["flex", "justify-between", "mt-auto"])}>
           <Button>Cancel</Button>
           <Button intent="primary">Save</Button>
         </Card.Footer>
       </Card.$>
-    </Modal>
+    </Flyout>
   ),
 };

@@ -20,13 +20,13 @@ export const Default: Story = {
   ),
 };
 
-export const Money: Story = {
-  render: () => (
-    <Box className={cx(["w-96"])}>
-      <Input label="Balance" money />
-    </Box>
-  ),
-};
+// export const Money: Story = {
+//   render: () => (
+//     <Box className={cx(["w-96"])}>
+//       <Input label="Balance" money />
+//     </Box>
+//   ),
+// };
 
 export const helpText: Story = {
   render: () => (
