@@ -39,7 +39,7 @@ const Modal = React.forwardRef<T.ModalElement, T.ModalProps>(
         </$.Portal>
       </$.Root>
     );
-  }
+  },
 );
 
 export { Modal };
