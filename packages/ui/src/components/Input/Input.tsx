@@ -1,10 +1,10 @@
 import * as React from "react";
 import dashify from "dashify";
 import type * as T from "./Input.types";
-import { Box } from "../Box";
-import { Label, HelpText } from "../Common";
+import { HelpText } from "../Common";
 import { cx } from "../../utils";
 import { inputStyles } from "./Input.styles";
+import { InputWrapper } from "../Common/InputWrapper";
 
 const Input = React.forwardRef<T.InputComponent, T.InputProps>(
   (
@@ -22,29 +22,10 @@ const Input = React.forwardRef<T.InputComponent, T.InputProps>(
     const classes = cx(inputStyles({ hasError, fullWidth }), props.className);
 
     return (
-      <Box className={cx(["relative"])}>
-        <Label
-          className={cx({
-            "sr-only": hideLabel,
-          })}
-          htmlFor={htmlId}
-        >
-          {label}
-        </Label>
-        <Box
-          className={cx(["relative"], {
-            "mt-1": !hideLabel,
-          })}
-        >
-          <input
-            {...props}
-            id={htmlId}
-            className={classes}
-            ref={forwardedRef}
-          />
-        </Box>
+      <InputWrapper htmlId={htmlId} label={label}>
+        <input {...props} id={htmlId} className={classes} ref={forwardedRef} />
         {helpText && <HelpText hasError={hasError}>{helpText}</HelpText>}
-      </Box>
+      </InputWrapper>
     );
   },
 );
