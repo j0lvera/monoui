@@ -1,13 +1,15 @@
-import { VariantProps } from "class-variance-authority";
-import type { buttonStyles } from "./Button.styles";
 import { ComponentPropsWithoutRef, ElementRef } from "react";
-import { Primitive } from "@radix-ui/react-primitive";
+import { VariantProps } from "class-variance-authority";
+import {
+  Button as RAButton,
+  ButtonProps as RAButtonProps,
+} from "react-aria-components";
+import type { buttonStyles } from "./Button.styles";
 
-type ButtonElement = ElementRef<typeof Primitive.button>;
+type ButtonElement = ElementRef<typeof RAButton>;
 
-type ButtonProps = ComponentPropsWithoutRef<typeof Primitive.button> &
+type ButtonProps = RAButtonProps &
   VariantProps<typeof buttonStyles> & {
-    loading?: boolean;
     fullWidth?: boolean;
   };
 
