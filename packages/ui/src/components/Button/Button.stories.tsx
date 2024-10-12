@@ -15,16 +15,16 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
-  render: () => <Button>Click me</Button>,
-};
-
 export const Primary: Story = {
   render: () => <Button intent="primary">Click me</Button>,
 };
 
 export const Secondary: Story = {
   render: () => <Button intent="secondary">Click me</Button>,
+};
+
+export const Outline: Story = {
+  render: () => <Button intent="outline">Click me</Button>,
 };
 
 export const Plain: Story = {

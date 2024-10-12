@@ -1,8 +1,23 @@
 import { cva } from "class-variance-authority";
 
+/**
+ * Variants: Primary | Secondary | Plain
+ * Sizes: Small | Medium | Large
+ * States: Disabled | Loading | Justified | OnlyIcon | FullWidth
+ */
+
 const base = [
   // Base
-  "relative isolate inline-flex items-center justify-center gap-x-2 rounded-lg border-2 text-base/6 font-semibold",
+  "relative",
+  "isolate",
+  "inline-flex",
+  "items-center",
+  "justify-center",
+  "gap-x-2",
+  "rounded-lg",
+  "border-2",
+  "text-base/6",
+  "font-semibold",
 
   // Focus
   "focus:outline-none",
@@ -21,7 +36,7 @@ const size = {
   lg: ["py-1.5", "px-3.5", "text-base"],
 };
 
-const DEFAULT = [
+const outline = [
   "bg-white",
   "hover:bg-gray-100",
   "text-mono-primary",
@@ -50,9 +65,10 @@ const buttonStyles = cva(base, {
     intent: {
       primary,
       secondary,
-      DEFAULT,
+      outline,
       plain,
     },
+
     size,
     fullWidth: {
       true: "w-full",
@@ -67,7 +83,7 @@ const buttonStyles = cva(base, {
   defaultVariants: {
     size: "md",
     primary: false,
-    intent: "DEFAULT",
+    intent: "secondary",
   },
 });
 
