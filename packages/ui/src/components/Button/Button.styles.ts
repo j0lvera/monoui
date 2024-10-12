@@ -19,8 +19,12 @@ const base = [
   "text-base/6",
   "font-semibold",
 
+  // Active
+  "active:ring-0",
+
   // Focus
   "focus:outline-none",
+  "focus:ring-0",
   "data-[focus]:outline",
   "focus-visible:ring-2",
   "focus-visible:ring-offset-2",

@@ -23,7 +23,7 @@ module.exports = {
           hover: colors.zinc[700],
         },
         "mono-border": {
-          DEFAULT: colors.gray["300"],
+          DEFAULT: colors.gray["400"],
         },
         "mono-text": {
           DEFAULT: colors.gray["500"],
