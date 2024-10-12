@@ -80,3 +80,13 @@ export const Loading: Story = {
     </Box>
   ),
 };
+
+export const FullWidth: Story = {
+  render: () => (
+    <Box className={cx(["space-x-2"])}>
+      <Button intent="primary" fullWidth>
+        Click me
+      </Button>
+    </Box>
+  ),
+};
