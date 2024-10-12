@@ -5,12 +5,9 @@ import type * as T from "./Button.types";
 import { cx } from "../../utils";
 
 const Button = forwardRef<T.ButtonElement, T.ButtonProps>(
-  (
-    { size, onlyIcon, fullWidth, intent, primary, children, ...props },
-    forwardedRef,
-  ) => {
+  ({ size, fullWidth, intent, primary, children, ...props }, forwardedRef) => {
     const classes = cx(
-      styles.buttonStyles({ size, intent, primary, onlyIcon, fullWidth }),
+      styles.buttonStyles({ size, intent, primary, fullWidth }),
       props.className,
     );
 
