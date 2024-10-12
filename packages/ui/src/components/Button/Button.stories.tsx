@@ -1,5 +1,4 @@
 import React from "react";
-import { FaBeer, FaApple } from "react-icons/fa";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "./Button";
@@ -16,19 +15,31 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
-  render: () => <Button intent="primary">Click me</Button>,
+  args: {
+    intent: "primary",
+    children: "Click me",
+  },
 };
 
 export const Secondary: Story = {
-  render: () => <Button intent="secondary">Click me</Button>,
+  args: {
+    intent: "secondary",
+    children: "Click me",
+  },
 };
 
 export const Outline: Story = {
-  render: () => <Button intent="outline">Click me</Button>,
+  args: {
+    intent: "outline",
+    children: "Click me",
+  },
 };
 
 export const Plain: Story = {
-  render: () => <Button intent="plain">Click me</Button>,
+  args: {
+    intent: "plain",
+    children: "Click me",
+  },
 };
 
 export const Sizes: Story = {
@@ -41,52 +52,9 @@ export const Sizes: Story = {
   ),
 };
 
-export const WithIcon: Story = {
-  render: () => (
-    <Box className={cx(["space-x-2"])}>
-      <Button>
-        <FaBeer />
-        Click me
-      </Button>
-
-      <Button intent="primary">
-        <FaApple />
-        Click me
-      </Button>
-    </Box>
-  ),
-};
-
-export const OnlyIcon: Story = {
-  render: () => (
-    <Box className={cx(["space-x-2"])}>
-      <Button onlyIcon aria-label="Click me">
-        <FaBeer />
-      </Button>
-
-      <Button intent="primary" onlyIcon aria-label="Click me">
-        <FaApple />
-      </Button>
-    </Box>
-  ),
-};
-
-export const Loading: Story = {
-  render: () => (
-    <Box className={cx(["space-x-2"])}>
-      <Button intent="primary" loading>
-        Click me
-      </Button>
-    </Box>
-  ),
-};
-
 export const FullWidth: Story = {
-  render: () => (
-    <Box className={cx(["space-x-2"])}>
-      <Button intent="primary" fullWidth>
-        Click me
-      </Button>
-    </Box>
-  ),
+  args: {
+    fullWidth: true,
+    children: "Click me",
+  },
 };
