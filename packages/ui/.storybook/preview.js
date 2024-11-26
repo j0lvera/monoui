@@ -1,3 +1,4 @@
+import { themes } from "@storybook/theming";
 import "./output.css";
 
 export const parameters = {
@@ -9,7 +10,7 @@ export const parameters = {
     },
   },
   darkMode: {
-    darkClass: "dark",
+    darkClass: ["dark", "bg-black"],
     classTarget: "html",
     stylePreview: true,
   },

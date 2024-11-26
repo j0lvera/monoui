@@ -28,20 +28,6 @@ export const Secondary: Story = {
   },
 };
 
-export const Outline: Story = {
-  args: {
-    intent: "outline",
-    children: "Click me",
-  },
-};
-
-export const Plain: Story = {
-  args: {
-    intent: "plain",
-    children: "Click me",
-  },
-};
-
 export const Sizes: Story = {
   render: () => (
     <Box className={cx(["space-x-2"])}>
@@ -58,3 +44,11 @@ export const FullWidth: Story = {
     children: "Click me",
   },
 };
+
+// TODO
+// export const Disabled: Story = {
+//   args: {
+//     disabled: true,
+//     children: "Click me",
+//   },
+// };

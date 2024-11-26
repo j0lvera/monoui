@@ -1,6 +1,7 @@
 {
-  "name": "monoui",
+  "name": "@monoui/ui",
   "version": "0.1.6",
+  "type": "module",
   "description": "monochromatic-ish UI library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -74,6 +75,7 @@
     "react-hook-form": "^7.43.2",
     "rollup": "^3.12.0",
     "storybook": "^7.6.7",
+    "storybook-dark-mode": "^4.0.2",
     "tailwind-merge": "^1.11.0",
     "tailwindcss": "^3.2.4",
     "tailwindcss-animate": "^1.0.7",

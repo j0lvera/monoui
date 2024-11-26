@@ -1,9 +1,9 @@
 import { cva } from "class-variance-authority";
 
 /**
- * Variants: Primary | Secondary | Plain
+ * Variants: Primary | Secondary
  * Sizes: Small | Medium | Large
- * States: Disabled | Loading | Justified | OnlyIcon | FullWidth
+ * States: Disabled | FullWidth
  */
 
 const base = [
@@ -29,9 +29,6 @@ const base = [
   "focus-visible:ring-2",
   "focus-visible:ring-offset-2",
   "focus-visible:ring-mono-primary",
-
-  // Icon
-  // "[&>[data-slot=icon]]:-mx-0.5 [&>[data-slot=icon]]:my-0.5 [&>[data-slot=icon]]:size-5 [&>[data-slot=icon]]:shrink-0 [&>[data-slot=icon]]:text-[--btn-icon] [&>[data-slot=icon]]:sm:my-1 [&>[data-slot=icon]]:sm:size-4 forced-colors:[--btn-icon:ButtonText] forced-colors:data-[hover]:[--btn-icon:ButtonText]",
 ];
 
 const size = {
@@ -40,25 +37,33 @@ const size = {
   lg: ["py-1.5", "px-3.5", "text-base"],
 };
 
-const outline = [
-  "bg-white",
-  "hover:bg-gray-100",
-  "text-mono-primary",
-  "border-mono-border",
-];
-
 const primary = [
-  "bg-mono-primary",
-  "hover:bg-mono-primary-hover",
-  "border-mono-primary",
+  "bg-gray-900",
   "text-white",
+  "border-gray-900",
+  "hover:bg-white",
+  "hover:text-black",
+  "dark:bg-white",
+  "dark:text-black",
+  "dark:border-black",
+  "dark:hover:bg-black",
+  "dark:hover:text-white",
+  "dark:border-white",
 ];
 
-const secondary = ["bg-mono-hover", "hover:bg-transparent"];
-
-const plain = ["bg-transparent", "border-transparent", "hover:bg-gray-100"];
-
-const onlyIcon = ["rounded-full", "p-1"];
+const secondary = [
+  "bg-white",
+  "text-black",
+  "border-gray-900",
+  "hover:bg-gray-900",
+  "hover:text-white",
+  "dark:bg-black",
+  "dark:text-white",
+  "dark:border-white",
+  "dark:hover:bg-white",
+  "dark:hover:text-black",
+  "dark:border-white",
+];
 
 const buttonStyles = cva(base, {
   variants: {
@@ -69,20 +74,16 @@ const buttonStyles = cva(base, {
     intent: {
       primary,
       secondary,
-      outline,
-      plain,
     },
 
     size,
     fullWidth: {
       true: "w-full",
     },
-    disabled: {
-      true: ["data-[disabled]:opacity-50"],
-    },
-    onlyIcon: {
-      true: onlyIcon,
-    },
+    // TODO
+    // disabled: {
+    //   true: ["line-through", "opacity-50"],
+    // },
   },
   defaultVariants: {
     size: "md",
