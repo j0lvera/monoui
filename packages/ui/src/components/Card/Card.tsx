@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Primitive } from "@radix-ui/react-primitive";
-
 import * as T from "./Card.types";
 import { cardStyles } from "./Card.styles";
 import { Header, Title, Description, Body, Footer } from "./components";
@@ -11,9 +10,9 @@ const Card = React.forwardRef<T.CardElement, T.CardProps>(
     const classes = cx(cardStyles({ paddless, borderless }), props.className);
 
     return (
-      <Primitive.div {...props} className={classes} ref={forwardedRef}>
+      <div {...props} className={classes} ref={forwardedRef}>
         {children}
-      </Primitive.div>
+      </div>
     );
   },
 );

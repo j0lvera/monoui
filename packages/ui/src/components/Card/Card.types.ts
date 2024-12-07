@@ -1,11 +1,10 @@
 import { ComponentPropsWithRef, ElementRef } from "react";
-import { Primitive } from "@radix-ui/react-primitive";
 import { VariantProps } from "class-variance-authority";
 import { cardStyles } from "./Card.styles";
 
-type CardElement = ElementRef<typeof Primitive.div>;
+type CardElement = ElementRef<"div">;
 
-type CardProps = Omit<ComponentPropsWithRef<typeof Primitive.div>, "asChild"> &
+type CardProps = ComponentPropsWithRef<"div"> &
   VariantProps<typeof cardStyles> & {
     paddless?: boolean;
   };

@@ -20,7 +20,7 @@ export const Default: Story = {
 
 export const AsForm: Story = {
   render: () => (
-    <Box asChild className={cx(["w-56"])}>
+    <Box className={cx(["w-56"])}>
       <form
         onSubmit={(event) => {
           event.preventDefault();
