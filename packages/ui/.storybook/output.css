@@ -1099,6 +1099,10 @@ select {
   border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
 }
 
+.divide-inherit > :not([hidden]) ~ :not([hidden]) {
+  border-color: inherit;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }

@@ -6,6 +6,7 @@ const base = [
   "bg-white",
   "divide-y",
   "divide-y-2",
+  "divide-inherit",
   "text-mono-text",
 ];
 

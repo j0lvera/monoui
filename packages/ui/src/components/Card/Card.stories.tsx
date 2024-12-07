@@ -24,7 +24,7 @@ type Story = StoryObj<typeof Card>;
 export const Default: Story = {
   render: () => (
     <Box className={cx(["w-96"])}>
-      <Card paddless>
+      <Card>
         <CardHeader>
           <CardTitle>Create account</CardTitle>
           <CardDescription>
@@ -58,10 +58,10 @@ export const Default: Story = {
 
 // Another way to use this component alone is to import the named export
 // import { Card } from './Card';
-export const Paddless: Story = {
+export const withPadding: Story = {
   render: () => (
     <Box className={cx(["w-96"])}>
-      <Card>
+      <Card withPadding={true}>
         <p>Dummy content while we create the input components.</p>
       </Card>
     </Box>
