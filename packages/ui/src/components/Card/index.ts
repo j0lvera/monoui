@@ -1,8 +1,7 @@
 export { Card } from "./Card";
-export { Header as CardHeader } from "./components/Header";
-export { Title as CardTitle } from "./components/Title";
-export { CardDescriptionComponent as CardDescription } from "./components/CardDescriptionComponent";
-export { CardBody as CardBody } from "./components/CardBody";
-export { CardFooter as CardFooter } from "./components/CardFooter";
-export type { CardElement, CardProps } from "./Card.types";
+export { CardHeader } from "./components/CardHeader";
+export { CardTitle } from "./components/CardTitle";
+export { CardDescription } from "./components/CardDescriptionComponent";
+export { CardBody } from "./components/CardBody";
+export { CardFooter } from "./components/CardFooter";
 export type { CardElement, CardProps } from "./Card.types";
