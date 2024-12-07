@@ -2,12 +2,12 @@ import * as React from "react";
 import { Box } from "../../Box";
 import { cx } from "../../../utils";
 
-type Description = (
-  props: React.PropsWithChildren<{}>
+type CardDescriptionComponent = (
+  props: React.PropsWithChildren<{}>,
 ) => React.ReactElement | null;
 
-const Description: Description = ({ children }) => {
+const CardDescription: CardDescriptionComponent = ({ children }) => {
   return <Box className={cx(["mt-1"])}>{children}</Box>;
 };
 
-export { Description };
+export { CardDescription };
