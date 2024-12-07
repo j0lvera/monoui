@@ -6,7 +6,7 @@ type CardElement = ElementRef<"div">;
 
 type CardProps = ComponentPropsWithRef<"div"> &
   VariantProps<typeof cardStyles> & {
-    paddless?: boolean;
+    withPadding?: boolean;
   };
 
 export type { CardElement, CardProps };

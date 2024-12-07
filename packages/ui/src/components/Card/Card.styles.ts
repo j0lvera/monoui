@@ -11,17 +11,17 @@ const base = [
 
 const cardStyles = cva(base, {
   variants: {
-    paddless: {
-      true: ["p-0"],
-      false: ["px-4", "py-4", "sm:px-6", "divide-y-0"],
+    withPadding: {
+      false: ["p-0"],
+      true: ["px-4", "py-4", "sm:px-6", "divide-y-0"],
     },
     borderless: {
       true: ["border-0"],
-      false: ["border-2"],
+      false: ["border-2", "border-mono-border"],
     },
   },
   defaultVariants: {
-    paddless: false,
+    withPadding: false,
     borderless: false,
   },
 });

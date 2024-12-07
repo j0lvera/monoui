@@ -7,7 +7,7 @@ import {
   CardBody,
   CardDescription,
   CardFooter,
-} from "./Card";
+} from "./index";
 import { Box } from "../Box";
 import { Input } from "../Input";
 import { Button } from "../Button";
