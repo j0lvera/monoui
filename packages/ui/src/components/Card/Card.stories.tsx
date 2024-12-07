@@ -1,14 +1,21 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import * as Card from "./Card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+  CardDescription,
+  CardFooter,
+} from "./Card";
 import { Box } from "../Box";
 import { Input } from "../Input";
 import { Button } from "../Button";
 import { cx } from "../../utils";
 
-const meta: Meta<typeof Card.$> = {
+const meta: Meta<typeof Card> = {
   title: "UI/Card",
-  component: Card.$,
+  component: Card,
 };
 
 export default meta;
@@ -17,14 +24,14 @@ type Story = StoryObj<typeof Card>;
 export const Default: Story = {
   render: () => (
     <Box className={cx(["w-96"])}>
-      <Card.$ paddless>
-        <Card.Header>
-          <Card.Title>Create account</Card.Title>
-          <Card.Description>
+      <Card paddless>
+        <CardHeader>
+          <CardTitle>Create account</CardTitle>
+          <CardDescription>
             Manage all your transactions in one place.
-          </Card.Description>
-        </Card.Header>
-        <Card.Body>
+          </CardDescription>
+        </CardHeader>
+        <CardBody>
           <form onSubmit={(event) => event.preventDefault()}>
             <Input label="Name" />
 
@@ -39,12 +46,12 @@ export const Default: Story = {
               // money
             />
           </form>
-        </Card.Body>
-        <Card.Footer className={cx(["flex", "justify-between"])}>
+        </CardBody>
+        <CardFooter className={cx(["flex", "justify-between"])}>
           <Button>Cancel</Button>
           <Button intent="primary">Save</Button>
-        </Card.Footer>
-      </Card.$>
+        </CardFooter>
+      </Card>
     </Box>
   ),
 };
@@ -54,9 +61,9 @@ export const Default: Story = {
 export const Paddless: Story = {
   render: () => (
     <Box className={cx(["w-96"])}>
-      <Card.$>
+      <Card>
         <p>Dummy content while we create the input components.</p>
-      </Card.$>
+      </Card>
     </Box>
   ),
 };

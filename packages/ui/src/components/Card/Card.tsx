@@ -15,10 +15,13 @@ const Card = React.forwardRef<T.CardElement, T.CardProps>(
         {children}
       </Primitive.div>
     );
-  }
+  },
 );
 
-// Root element
-const $ = Card;
+const CardHeader = Header;
+const CardTitle = Title;
+const CardDescription = Description;
+const CardBody = Body;
+const CardFooter = Footer;
 
-export { $, Card, Header, Title, Body, Description, Footer };
+export { Card, CardHeader, CardTitle, CardDescription, CardBody, CardFooter };
