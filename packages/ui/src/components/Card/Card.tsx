@@ -4,9 +4,12 @@ import { cardStyles } from "./Card.styles";
 import { cx } from "../../utils";
 
 const Card = React.forwardRef<T.CardElement, T.CardProps>(
-  ({ children, withPadding, borderless = false, ...props }, forwardedRef) => {
+  (
+    { children, withPadding = false, withBorder = false, ...props },
+    forwardedRef,
+  ) => {
     const classes = cx(
-      cardStyles({ withPadding, borderless }),
+      cardStyles({ withPadding, withBorder }),
       props.className,
     );
 

@@ -15,14 +15,14 @@ const cardStyles = cva(base, {
       false: ["p-0"],
       true: ["px-4", "py-4", "sm:px-6", "divide-y-0"],
     },
-    borderless: {
+    withBorder: {
       true: ["border-0"],
       false: ["border-2", "border-mono-border"],
     },
   },
   defaultVariants: {
     withPadding: false,
-    borderless: false,
+    withBorder: false,
   },
 });
 
