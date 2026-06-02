@@ -1,20 +1,10 @@
 const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
-const Color = require("color");
-
-// https://github.com/tailwindlabs/discuss/issues/392#issuecomment-559305633
-const alpha = (clr, val) => Color(clr).alpha(val).rgb().string();
-const lighen = (clr, val) => Color(clr).lighten(val).rgb().string();
-const darken = (clr, val) => Color(clr).darken(val).rgb().string();
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  content: [
-    "./src/components/**/*.{ts,tsx}",
-    "./src/examples/**/*.{ts,tsx}",
-    "./src/index.ts",
-  ],
+  content: ["./src/**/*.{ts,tsx,mdx}", "./.storybook/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {

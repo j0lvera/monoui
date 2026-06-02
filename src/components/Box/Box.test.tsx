@@ -1,5 +1,4 @@
-import React, { HTMLAttributes } from "react";
-import "@testing-library/jest-dom";
+import { describe, test, expect } from "bun:test";
 import { render, screen } from "@testing-library/react";
 
 import { Box } from "./Box";
